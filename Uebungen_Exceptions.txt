@@ -1,0 +1,29 @@
+Übung01
+
+Es liegt eine einfache Implementierung eines Texteditor als Windows Forms C# Projekt vor.
+Mit diesem Editor ist es möglich einfache Textdateien zu laden und zu speichern.
+
+TODO:
+Füge Exception Handling ein.
+
+Folgende Fragen sollte man sich stellen?
+ - Wo kann im Code eine Exception auftreten?
+ - Sollte man diese Abfangen? 
+ - Was soll im Fehlerfall passieren?
+ 
+Zusätzliche Aufgaben:
+ - Implementiere eine benutzerdefinierte  Exception und werfe und fange sie.
+ 
+ 
+Übung02
+
+Ein Entwickler hat ein Tool benötigt um mehrere in Base64 gespeicherte Dateien in Text umzuwandeln.
+Dazu hat er sich einen Base64 Konvertierer geschrieben, der alle Dateien in einem Ordner von Base64 in Text umwandelt.
+
+TODO:
+- Exception Handling einfügen
+- Der Entwickler war nicht gründlich und hat nichts getestet, dementsprechend sind zusätzliche Fehler im Code. 
+  Diese gilt es zu beseitigen.
+
+
+ 
