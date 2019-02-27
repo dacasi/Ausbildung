@@ -10,23 +10,36 @@ namespace Übung02_Exceptions
     {
         static void Main(string[] args)
         {
-            try
+            int i = 0;
+            int retries = 3;
+            int? result = null;
+            for (i = 0; i < retries; i++)
             {
-                var result = DivideNumbers();
-                Console.WriteLine($"Ergebnis: {result}");
+                try
+                {
+                    result = DivideNumbers();
+                    Console.WriteLine($"Ergebnis: {result}");
+                    break;
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Eingabe ist keine Zahl.");
+                }
+                catch (DivideByZeroException)
+                {
+                    Console.WriteLine("Nicht defniert. Man kann nicht durch 0 teilen.");
+                }
+                catch (OverflowException)
+                {
+                    Console.WriteLine("Zahl befindet sich außerhalb des Wertebereichs.");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Woops das hätte nicht passieren sollen." + ex.Message);
+                }
             }
-            catch(FormatException)
-            {
-                Console.WriteLine("Eingabe ist keine Zahl.");
-            }
-            catch(DivideByZeroException)
-            {
-                Console.WriteLine("Nicht defniert. Man kann nicht durch 0 teilen.");
-            }
-            catch (Exception ex )
-            {
-                Console.WriteLine("Woops das hätte nicht passieren sollen." + ex.Message);
-            }
+            if (result == null && i == retries)
+                Console.WriteLine($"{retries} falsche Eingabe - Abbruch");
 
             Console.WriteLine("Press any key to continue.");
             Console.ReadLine();
@@ -34,7 +47,6 @@ namespace Übung02_Exceptions
 
         private static int DivideNumbers()
         {
-
             Console.Write("Zähler: ");
             var a = int.Parse(Console.ReadLine());
 
